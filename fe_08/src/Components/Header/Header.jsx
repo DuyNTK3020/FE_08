@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import header_icons from '../../Assets/icons/header_icons.js'
-import avatar from '../../Assets/img/avatar.jpg'
-import { Logo } from '../Logo/Logo.jsx';
+import header_icons from './../../Assets/icons/header_icons.js'
+import avatar from './../../Assets/img/avatar.jpg'
+import { Logo } from './../Logo/Logo.jsx';
+import { Dropdown } from './../Dropdown/Dropdown.jsx';
 import { Link } from 'react-router-dom';
 
 export const Header = () => {
-  const [menu, setMenu] = useState("shop");
 
   return (
     <div id='header' className="header">
@@ -21,10 +21,28 @@ export const Header = () => {
 
           {/* Navbar */}
           <div className="navbar">
-            <ul className='navbar__list'>
-              <li><Link to ='/' className='navbar__link'>Departments<img src={header_icons.arrow_down} alt="" className='icon navbar__arrow' /></Link></li>
-              <li><Link to ='/' className='navbar__link'>Grocery<img src={header_icons.arrow_down} alt="" className='icon navbar__arrow' /></Link></li>
-              <li><Link to ='/' className='navbar__link'>Beauty<img src={header_icons.arrow_down} alt="" className='icon navbar__arrow' /></Link></li>
+            <ul className='navbar__list js-dropdown-list'>
+              <li className='navbar__item'>
+                <Link to ='/' className='navbar__link'>
+                  Departments
+                  <img src={header_icons.arrow_down} alt="" className='icon navbar__arrow' />
+                </Link>
+                <Dropdown/>
+              </li>
+              <li className='navbar__item'>
+                <Link to ='/' className='navbar__link'>
+                  Grocery
+                  <img src={header_icons.arrow_down} alt="" className='icon navbar__arrow' />
+                </Link>
+                <Dropdown/>
+              </li>
+              <li className='navbar__item'>
+                <Link to ='/' className='navbar__link'>
+                  Beauty
+                  <img src={header_icons.arrow_down} alt="" className='icon navbar__arrow' />
+                </Link>
+                <Dropdown/>
+              </li>
             </ul>
           </div>
 

@@ -4,6 +4,7 @@ import search from "./search.svg";
 import heart from "./heart.svg";
 import buy from "./buy.svg";
 import more from "./more.svg";
+import dropdown_arrow from "./dropdown_arrow.svg";
 
 const header_icons = {
     arrow_down,
@@ -11,7 +12,8 @@ const header_icons = {
     search,
     heart,
     buy,
-    more
+    more,
+    dropdown_arrow
 };
 
 export default header_icons;

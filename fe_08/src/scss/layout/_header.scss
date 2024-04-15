@@ -20,6 +20,7 @@
 
 .top-bar {
     @extend %flexItemsCenter;
+    position: relative;
 
     &__more {
         display: none;
@@ -47,19 +48,27 @@
     
     &__list {
         @extend %flexItemsCenter;
-        gap: 30px;
+        // gap: 30px;
     }
 
     &__link {
         @extend %flexItemsCenter;
         gap: 6px;
+        height: 50px;
         font-size: 1.5rem;
         font-weight: 500;
-        line-height: 146.667%
+        line-height: 146.667%;
+        padding: 0 15px;
     }
 
     &__arrow {
         margin-top: 3px;
+    }
+
+    &__item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        // transition: opacity 0.5s;
     }
 }
 

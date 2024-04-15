@@ -13,4 +13,8 @@ html {
     @include abstracts.breakpoint(lg) {
         --header-bg-color: #FFF;
     }
+
+    // Dropdown
+    --dropdown-bg-color: #FFF;
+    --dropdown-shadow-color: rgba(200, 200, 200, 0.40);
 }
