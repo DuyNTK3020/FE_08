@@ -11,6 +11,11 @@ export const Header = () => {
     <div id='header' className="header">
       <div className="container">
         <div className="top-bar">
+          {/* More */}
+          <button className="top-bar__more">
+            <img src={header_icons.more} alt="" className='top-bar__more-icon icon'/>
+          </button>
+
           {/* Logo */}
           <Logo/>
 
