@@ -1,6 +1,7 @@
 .dropdown {
     position: absolute;
     left: 0;
+    width: min(1240px, 100%);
     padding-top: 54px;
     opacity: 0;
     visibility: hidden;
@@ -8,6 +9,7 @@
 
     &__inner {
         position: relative;
+        height: min(582px, 100vh - 158px);
         padding: 30px;
         border-radius: 20px;
         background: var(--dropdown-bg-color);
@@ -19,5 +21,15 @@
         //     top: -13px;
         //     left: var(--arrow-left-pos);
         // }
+    }
+}
+
+.top-menu {
+    height: 100%;
+
+    &__main {
+        width: 292px;
+        height: 100%;
+        border-right: 1px solid var(--top-menu-border-color);
     }
 }

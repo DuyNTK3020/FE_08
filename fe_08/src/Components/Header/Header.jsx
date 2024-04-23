@@ -1,18 +1,24 @@
-import React, {useState} from 'react'
-import header_icons from './../../Assets/icons/header_icons.js'
-import avatar from './../../Assets/img/avatar.jpg'
+import React, { useState } from 'react';
+import header_icons from './../../Assets/icons/header_icons.js';
+import arrow_left_icon from './../../Assets/icons/arrow_left.svg';
+import avatar from './../../Assets/img/avatar.jpg';
 import { Logo } from './../Logo/Logo.jsx';
 import { Dropdown } from './../Dropdown/Dropdown.jsx';
 import { Link } from 'react-router-dom';
 
 export const Header = () => {
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+  };
 
   return (
     <div id='header' className="header">
       <div className="container">
         <div className="top-bar">
           {/* More */}
-          <button className="top-bar__more">
+          <button className="top-bar__more" onClick={toggleNavbar}>
             <img src={header_icons.more} alt="" className='top-bar__more-icon icon'/>
           </button>
 
@@ -20,7 +26,10 @@ export const Header = () => {
           <Logo/>
 
           {/* Navbar */}
-          <div className="navbar">
+          <div className={`navbar ${isNavbarOpen ? 'open' : ''}`}>
+            <button className="navbar__close-btn" onClick={toggleNavbar}>
+              <img src={arrow_left_icon} alt="" />
+            </button>
             <ul className='navbar__list js-dropdown-list'>
               <li className='navbar__item'>
                 <Link to ='/' className='navbar__link'>
@@ -45,6 +54,7 @@ export const Header = () => {
               </li>
             </ul>
           </div>
+          <div className={`navbar__overlay ${isNavbarOpen ? 'close' : ''}`} onClick={toggleNavbar}></div>
 
           {/* Actions */}
           <div className="top-act">
